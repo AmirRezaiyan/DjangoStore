@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -11,6 +12,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
+DATABASES = {
+    "default": dj_database_url.config(conn_max_age=600)
+}
 
 
 INSTALLED_APPS = [
